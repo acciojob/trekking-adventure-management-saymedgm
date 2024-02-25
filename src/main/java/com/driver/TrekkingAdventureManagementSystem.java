@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TrekkingAdventureManagementSystem {
-	private static Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         // Get trek details from the user
@@ -35,8 +35,15 @@ public class TrekkingAdventureManagementSystem {
     }
 
     public static String calculateTrekDifficulty(Trek trek) {
-		
-    	// your code goes here
-    	return null;
+        // Advanced mathematical modeling for trek difficulty calculation
+        int difficultyScore = trek.getDuration() + (trek.getAltitudeGain() / 100) + trek.getKnownChallenges().size();
+
+        if (difficultyScore <= 10) {
+            return "Easy";
+        } else if (difficultyScore <= 20) {
+            return "Moderate";
+        } else {
+            return "Challenging";
+        }
     }
 }
